@@ -1,0 +1,24 @@
+{
+  "name": "discord-tsbot-template",
+  "version": "0.0.1",
+  "description": "Template para bot do Discord em TypeScript",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "dev": "ts-node src/main.ts",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "keywords": ["discord", "bot", "typescript"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+}
