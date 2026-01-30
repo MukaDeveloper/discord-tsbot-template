@@ -1,15 +1,23 @@
 {
   "name": "discord-tsbot-template",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Template para bot do Discord em TypeScript",
   "main": "dist/main.js",
   "scripts": {
-    "start": "node dist/main.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "start": "npm run build && node dist/main.js",
     "dev": "ts-node src/main.ts",
-    "build": "tsc",
+    "build": "tsc && tsc-alias -p tsconfig.json",
     "watch": "tsc -w"
   },
-  "keywords": ["discord", "bot", "typescript"],
+  "keywords": [
+    "discord",
+    "bot",
+    "typescript",
+    "muka",
+    "mxk4"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -18,7 +26,9 @@
   },
   "devDependencies": {
     "@types/node": "^20.3.1",
+    "prettier": "^3.8.1",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.16",
     "typescript": "^5.1.3"
   }
 }
