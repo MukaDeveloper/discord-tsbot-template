@@ -7,7 +7,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
     "start": "npm run build && node dist/main.js",
-    "dev": "ts-node src/main.ts",
+    "start:dev": "ts-node -r tsconfig-paths/register src/main.ts",
     "build": "tsc && tsc-alias -p tsconfig.json",
     "watch": "tsc -w"
   },
@@ -21,7 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.11.0",
+    "discord.js": "^14.25.1",
     "dotenv": "^16.3.1"
   },
   "devDependencies": {
@@ -29,6 +29,7 @@
     "prettier": "^3.8.1",
     "ts-node": "^10.9.1",
     "tsc-alias": "^1.8.16",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.3"
   }
 }

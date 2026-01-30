@@ -41,7 +41,7 @@ export async function createClient() {
     );
   }
 
-  client.once('ready', async () => {
+  client.once('clientReady', async () => {
     const activities = [`Em desenvolvimento`];
 
     let i = 0;

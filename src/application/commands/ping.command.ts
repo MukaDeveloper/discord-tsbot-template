@@ -7,9 +7,9 @@ export class PingCommand implements Command {
     .setName('ping')
     .setDescription('Veja minha latência.');
 
-  public async execute(interaction: CommandInteraction): Promise<void> {
-    await interaction.deferReply();
+  public async execute(interaction: CommandInteraction, client: Client): Promise<void> {
+    const defered = await interaction.deferReply({ withResponse: true });
     const response = responseResolver(interaction, false);
-    await response({ content: 'Pong!' });
+    await response({ content: `Latência: ${client.ws.ping}ms\nPing: ${defered.interaction.createdTimestamp - interaction.createdTimestamp}ms` });
   }
 }

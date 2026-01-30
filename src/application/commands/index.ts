@@ -1,3 +1,4 @@
-import { PingCommand } from './ping';
+import { PingCommand } from './ping.command';
+import { UptimeCommand } from './uptime.command';
 
-export const commandList = [new PingCommand()];
+export const commandList = [new PingCommand(), new UptimeCommand()];

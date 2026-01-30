@@ -7,6 +7,28 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-01-30
+
+### Added
+
+- Comando `/uptime` para exibir tempo de atividade do bot (usa `time.util` para formatação)
+- Pacote `tsconfig-paths` e script `start:dev` com `-r tsconfig-paths/register` para resolver path aliases em desenvolvimento
+- Seção "Criando um Comando/Evento" no README com passos para adicionar comandos e eventos
+- Comando `/ping` passa a exibir latência do WebSocket e tempo de resposta (via `deferReply({ withResponse: true })`)
+
+### Changed
+
+- Comando ping movido de `ping.ts` para `ping.command.ts` (convenção de nome)
+- Script de desenvolvimento renomeado de `dev` para `start:dev`
+- `responseResolver` refatorado: função assíncrona que chama `reply`/`editReply`/`followUp` diretamente em vez de `.bind(interaction)`
+- Evento do client de `ready` para `clientReady` em `client.ts`
+- Dependência `discord.js` atualizada para `^14.25.1`
+- Lista de comandos em `index.ts`: `PingCommand` e `UptimeCommand`
+
+### Removed
+
+- Arquivo `src/application/commands/ping.ts` (substituído por `ping.command.ts`)
+
 ## [1.0.0] - 2026-01-30
 
 ### Added
@@ -45,5 +67,6 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - `default-values.ts` (substituído por `time.constants.ts` e `time.util.ts`)
 - Evento `on-ready` como arquivo separado (lógica incorporada em `client.ts`)
 
-[Unreleased]: https://github.com/owner/repo/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/owner/repo/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/owner/repo/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/owner/repo/releases/tag/v1.0.0

@@ -4,12 +4,14 @@ export class CommandRegistry {
   private nameMap = new Map<string, Command>();
 
   constructor(commands: Command[]) {
+    let i = 0;
     for (const cmd of commands) {
       const name = cmd.data.name;
       if (this.nameMap.has(name)) {
         throw new Error(`Nome de comando duplicado: "${name}"`);
       }
       this.nameMap.set(name, cmd);
+      i++;
     }
   }
 
